@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адилет & Жибек | Мы женимся!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+        
+        body {
+            font-family: 'Bad Script', cursive;
+            background: linear-gradient(180deg, #87CEFA 0%, #B0E0E6 100%);
+            color: #4b4453;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .shadow-soft {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .cartoon-bg {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 4px solid #4b4453;
+            box-shadow: 8px 8px 0 #4b4453;
+            background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M50 0L61.8 38.2L100 50L61.8 61.8L50 100L38.2 61.8L0 50L38.2 38.2Z" fill="%23e0e0e0" opacity="0.2"/%3E%3C/svg%3E');
+            background-size: 200px;
+        }
+
+        .cartoon-btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            box-shadow: 4px 4px 0 #d94689;
+            transition: all 0.2s ease-in-out;
+        }
+        .cartoon-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #d94689;
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: cloud-float linear infinite;
+        }
+        .cloud:nth-child(1) { width: 150px; height: 50px; top: 10%; left: 5%; animation-duration: 40s; }
+        .cloud:nth-child(2) { width: 200px; height: 70px; top: 20%; right: 10%; animation-duration: 50s; }
+        .cloud:nth-child(3) { width: 100px; height: 40px; bottom: 15%; left: 20%; animation-duration: 35s; }
+        .cloud:nth-child(4) { width: 180px; height: 60px; top: 30%; left: 45%; animation-duration: 45s; }
+        .cloud:nth-child(5) { width: 130px; height: 45px; bottom: 25%; right: 30%; animation-duration: 38s; }
+
+        @keyframes cloud-float {
+            from { transform: translateX(100vw); }
+            to { transform: translateX(-100vw); }
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-in-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .slide-up.delay-1 { animation-delay: 0.5s; }
+        .slide-up.delay-2 { animation-delay: 1s; }
+        .slide-up.delay-3 { animation-delay: 1.5s; }
+        .slide-up.delay-4 { animation-delay: 2s; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-hover {
+            transition: transform 0.3s ease-in-out;
+        }
+        .photo-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8 relative">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+
+    <div class="cartoon-bg rounded-2xl max-w-2xl w-full p-6 sm:p-10 text-center relative z-10">
+        <div class="space-y-8">
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-wider mt-4 slide-up delay-1">
+                Приглашение на Свадьбу
+            </h1>
+            <h2 class="text-6xl sm:text-7xl text-[#ff69b4] font-bold leading-none slide-up delay-2">
+                Адилет и Жибек
+            </h2>
+            <div class="space-y-4 slide-up delay-3">
+                <p class="text-lg sm:text-xl font-light">
+                    С огромной радостью приглашаем вас на наше весёлое и сказочное свадебное приключение!
+                </p>
+                <img src="https://i.ibb.co/Tx6Y8rv8/prig.png" alt="Мультяшная фотография Адилет и Жибек" class="w-full h-auto rounded-2xl border-4 border-[#4b4453] max-h-96 object-cover photo-hover">
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 sm:p-8 space-y-6 slide-up delay-4">
+                <p class="text-xl sm:text-2xl font-light">
+                    Приходите, чтобы разделить с нами этот особенный день, полный смеха и любви!
+                </p>
+                <div class="text-xl sm:text-3xl font-normal">
+                    <p>
+                        <span id="countdown"></span>
+                    </p>
+                </div>
+                <div class="border-t-4 border-b-4 border-[#ff69b4] py-4">
+                    <p class="text-2xl sm:text-3xl font-bold">
+                        22 октября 2025 года
+                    </p>
+                    <p class="text-xl sm:text-2xl font-bold">
+                        17:00
+                    </p>
+                </div>
+                <p class="text-xl sm:text-2xl font-bold">
+                    Мы будем рады видеть вас по адресу:<br>
+                    <span class="font-bold">Ресторан "Sultan Hall", Улица Фрунзе, 109а</span>
+                </p>
+                <a href="https://2gis.kg/bishkek/firm/70000001051289949?m=74.448161%2C42.873439%2F18" target="_blank" class="inline-block mt-4 text-[#a87f87] hover:text-[#916b72] transition-colors duration-300 font-bold underline">
+                    Посмотреть на карте
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Set the date we're counting down to
+            const countdownDate = new Date("Oct 22, 2025 17:00:00").getTime();
+            const countdownElement = document.getElementById("countdown");
+
+            // Update the count down every 1 second
+            let x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `До свадьбы осталось: <br>${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    countdownElement.innerHTML = "Праздник уже начался!";
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
